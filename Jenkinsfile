@@ -2,9 +2,9 @@
 // Builds the scenes enabled in File > Build Settings for each TARGET with
 // Assets/Editor/CommandLineBuild.cs. See "Configuring a Legacy Unity Build Pipeline.docx".
 //
-// Unity 2019.2 notes:
-// - Linux64 builds with Mono only (Linux IL2CPP starts in 2019.3). Win64 IL2CPP only
-//   builds on a Windows machine, so on the Linux agent the editor script uses Mono.
+// Unity 2019.4 notes:
+// - The Linux agent image installs windows-mono and webgl modules only (no linux-il2cpp
+//   for 2019.4), so Linux64 and Win64 players are built with Mono.
 // - Agent image modules (UNITY_INSTALLS): 2019.4.41f2:6b23d448b533:windows-mono,webgl
 def buildDir(String target, String buildType) {
   def projectPrefix = (env.PROJECT_DIR == '.') ? '' : "${env.PROJECT_DIR}/"
